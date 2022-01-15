@@ -36,10 +36,10 @@ It will take about 10 hours on 12 CPUs (Xeon E5-2609 1.70GHz) to run the demo pr
 #### Skeleton Decoration (`./decorator`)
 There are two step for skeleton decoration, sites prediction and groups prediction. First, the decorating sites were predicted with Transformer model trained using [OpenNMT](https://opennmt.net/OpenNMT-py/) and [PyTorch](https://pytorch.org/) and then, teh R-groups were predicted with the RNN-based model proposed by [Arús-Pous et al.](https://github.com/undeadpixel/reinvent-scaffold-decorator).
 
-Sites prediction:
+##### Sites prediction:
 `skeleton_extraction.py`: This is used to extract the carbon skeleton from the terpenoids structure.
 `site_prediction.sh`: This script is used to train and test the sites prediction model.
 
-Groups prediction:
-##### This model was analogous to the scaffold decorator proposed in "[SMILES-based deep generative scaffold decorator for de-novo drug design](https://doi.org/10.1186/s13321-020-00441-8)"
+##### Groups prediction:
+###### This model was analogous to the scaffold decorator proposed in "[SMILES-based deep generative scaffold decorator for de-novo drug design](https://doi.org/10.1186/s13321-020-00441-8)"
 `group_prediction.sh`: This script is used to train and test the sites prediction model.
