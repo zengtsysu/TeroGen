@@ -6,7 +6,7 @@ This model was analogous to the scaffold decorator proposed in "[SMILES-based de
 echo " Job begin time: " `date`
 
 ##### randomize smiles
-python ./create_randomized_smiles.py -i data/training.smi -o data/training -n 50
+python ./create_randomized_smiles.py -i data/training/training.smi -o data/training -n 50
 
 ##### creat model
 #python create_model.py -i data/training/001.smi -o data/checkpoints/rgroup.empty -d 0.2
