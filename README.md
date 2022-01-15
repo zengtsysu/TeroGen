@@ -9,7 +9,7 @@ Source code used to create, train and sample a bio-inspired terpenoids generatio
 The model is divided into two relatively independent parts, a Reactor, which conducts metadynamics simulations to explore the reaction space of given carbocations and a Decorator, which predicts the decorating sites and groups for a given skeleton.
 
 
-####Set up
+#### Set up
 ------------
 For Reactor [xtb](https://xtb-docs.readthedocs.io/en/latest/contents.html) is required. In some scripts of Decorator Spark 2.4 is required (and thus Java 8).
 Reactor was tested on Linux with CPUs and Decorator was tested with a Tesla V-100.
@@ -20,8 +20,8 @@ You will wish to install TeroGen in a virtual environment to prevent conflicting
 conda create -n terogen python==3.6
 conda activate terogen
 sh install.sh
-
-####General Usage
+```
+#### General Usage
 -------------
 
 ### Carbocation Reactor (`./reactor`)
