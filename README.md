@@ -34,7 +34,7 @@ Any arbitrary molecule can be used as the initial structure for metadynamics sum
 It will take about 10 hours on 12 CPUs (Xeon E5-2609 1.70GHz) to run the demo provided in the script.
 
 #### Skeleton Decoration (`./decorator`)
-There are two step for skeleton decoration, sites prediction and groups prediction. First, the decorating sites were predicted with Transformer model trained using [OpenNMT](https://opennmt.net/OpenNMT-py/) and [PyTorch](https://pytorch.org/) and then, teh R-groups were predicted with the RNN-based model proposed by [Arús-Pous et al.](https://github.com/undeadpixel/reinvent-scaffold-decorator).
+There are two step for skeleton decoration, sites prediction and groups prediction. First, the decorating sites were predicted with Transformer model trained using [OpenNMT](https://opennmt.net/OpenNMT-py/) and [PyTorch](https://pytorch.org/) and then, the R-groups were predicted with the RNN-based model proposed by [Arús-Pous et al.](https://github.com/undeadpixel/reinvent-scaffold-decorator).
 
 ##### Sites prediction:
 `skeleton_extraction.py`: This is used to extract the carbon skeleton from the terpenoids structure.
