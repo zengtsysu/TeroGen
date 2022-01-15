@@ -28,7 +28,7 @@ sh install.sh
 
 Any arbitrary molecule can be used as the initial structure for metadynamics sumilations, while herein for tergenoids generation, the isoprenoid carbocations were used.
 
-`reactor.sh`: This script will conduct medadynamics sumilations with specific initial structure and parameters. The output is a reactant-product list with energetics properties in tsv format. It will take about **** on 12 CPUs (Xeon E5-2609 1.70GHz) to run the demo provided in the script.
+`reactor.sh`: This script will conduct medadynamics sumilations with specific initial structure and parameters. The output is a reactant-product list with energetics properties in tsv format.
 `deprotonation.py`: This will quench carbocations by exhaustive deprotonation and also output a reactant-product list in tsv format.
 
 It will take about 10 hours on 12 CPUs (Xeon E5-2609 1.70GHz) to run the demo provided in the script.
