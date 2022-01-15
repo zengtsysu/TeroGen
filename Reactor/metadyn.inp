@@ -1,0 +1,15 @@
+$chrg 1
+$md
+   dump=5
+   time=15
+   step=0.5
+   temp=298
+   shake=0
+   hmass=2
+$end
+
+$metadyn
+   save=100
+   kpush=0.18
+   alp=0.3
+$end
