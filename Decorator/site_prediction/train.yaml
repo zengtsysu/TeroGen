@@ -1,0 +1,63 @@
+# config.yaml
+#
+# ## Where the samples will be written
+
+# ## Where the vocab(s) will be written
+src_vocab: data/dataset/vocab.src
+tgt_vocab: data/dataset/vocab.tgt
+# # Prevent overwriting existing files in the folder
+overwrite: False
+
+# # Corpus opts:
+data:
+    corpus_1:
+        path_src: data/dataset/train_src_aug.txt
+        path_tgt: data/dataset/train_tar_aug.txt
+        weight: 9
+    corpus_2:
+        path_src: data/dataset/train_src_can.txt
+        path_tgt: data/dataset/train_tar_can.txt
+        weight: 1
+    valid:
+        path_src: data/dataset/valid_src_can.txt
+        path_tgt: data/dataset/valid_tar_can.txt
+src_seq_length: 300
+tgt_seq_length: 300
+
+# General opts
+save_model: data/checkpoints/sites
+save_checkpoint_steps: 10000
+keep_checkpoint: 40
+train_steps: 600000
+seed: 1
+
+# Batching
+gpu_ranks: [0]
+max_generator_batches: 16
+batch_type: "tokens"
+batch_size: 4096
+accum_count: [4]
+report_every: 1000
+
+# # Optimization
+optim: "adam"
+learning_rate: 2
+warmup_steps: 8000
+decay_method: "noam"
+adam_beta2: 0.998
+max_grad_norm: 0
+param_init: 0
+param_init_glorot: true
+normalization: "tokens"
+
+# # Model
+encoder_type: transformer
+decoder_type: transformer
+position_encoding: true
+enc_layers: 4
+dec_layers: 4
+heads: 8
+rnn_size: 256
+word_vec_size: 256
+transformer_ff: 2048
+dropout: [0.1]
