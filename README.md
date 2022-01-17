@@ -38,10 +38,12 @@ There are two step for skeleton decoration, sites prediction and groups predicti
 
 ##### Sites prediction:
 One need to first download the [data](http://terokit.qmclab.com/download.html?file=site_data.zip) and unzip under ```terogen/Decorator/site_prediction```, in which the checkppints can be used to do the prediction directly and the dataset can be used to train and test the model by user.
+
 `skeleton_extraction.py`: This is used to extract the carbon skeleton from the terpenoids structure.
 `site_prediction.sh`: This script is used to train and test the sites prediction model.
 
 ##### Groups prediction:
 ###### This model was analogous to the scaffold decorator proposed in "[SMILES-based deep generative scaffold decorator for de-novo drug design](https://github.com/undeadpixel/reinvent-scaffold-decorator)"
 One need to first download the [data](http://terokit.qmclab.com/download.html?file=group_data.zip) and unzip under ```terogen/Decorator/group_decoration```, in which the checkppints can be used to do the prediction directly and the dataset can be used to train and test the model by user.
+
 `group_prediction.sh`: This script is used to train and test the sites prediction model.
