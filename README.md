@@ -17,7 +17,7 @@ You will wish to install TeroGen in a virtual environment to prevent conflicting
 
 ```python
 
-conda create -n terogen python==3.6
+conda create -n terogen python==3.6.13
 conda activate terogen
 sh install.sh
 ```
