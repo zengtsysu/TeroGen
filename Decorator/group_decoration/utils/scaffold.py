@@ -19,14 +19,14 @@ class SlicedMol:
 
         if isinstance(decorations, list):
             decorations = [uc.copy_mol(dec) for dec in decorations]
-            nums = [get_first_attachment_point(dec) for dec in decorations]
-            self.decorations = {num: remove_attachment_point_numbers(dec)
+            nums = [dec for dec in decorations]
+            self.decorations = {num: dec
                                 for num, dec in zip(nums, decorations)}
         else:
-            self.decorations = {num: remove_attachment_point_numbers(uc.copy_mol(dec))
+            self.decorations = {num: uc.copy_mol(dec)
                                 for num, dec in decorations.items()}
-
-        self._normalize()
+        
+        #self._normalize()
 
     def __eq__(self, other_sliced_mol):
         return self.to_smiles() == other_sliced_mol.to_smiles()
@@ -38,6 +38,7 @@ class SlicedMol:
     def _normalize(self):
         """
         Normalizes the scaffold, given that the canonicalization algorithm uses the atom map number to canonicalize.
+        """
         """
         for atom in self.scaffold.GetAtoms():
             if atom.HasProp("molAtomMapNumber") and atom.GetSymbol() == ATTACHMENT_POINT_TOKEN:
@@ -58,6 +59,8 @@ class SlicedMol:
                 atom.SetProp("molAtomMapNumber", str(curr_idx))
                 curr2can[num] = curr_idx
                 curr_idx += 1
+        """
+        curr2can = {}
         self.decorations = {curr2can[num]: dec for num, dec in self.decorations.items()}
 
     def to_smiles(self, variant="canonical"):
@@ -67,7 +70,7 @@ class SlicedMol:
         :return: A tuple with the SMILES of the scaffold and a dict with the SMILES of the decorations.
         """
         return (to_smiles(self.scaffold, variant=variant),
-                {num: to_smiles(dec, variant=variant) for num, dec in self.decorations.items()})
+                [to_smiles(dec, variant=variant) for _, dec in self.decorations.items()])
 
 
 ATTACHMENT_POINT_TOKEN = "*"
