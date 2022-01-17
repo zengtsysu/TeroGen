@@ -1,4 +1,4 @@
-# terogen
+# TeroGen
 Implementation of the terpenoids generation used in "Bio-inspired Chemical Space Exploration of Terpenoids"
 =======================================================================================================================================
 
