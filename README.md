@@ -34,12 +34,14 @@ Any arbitrary molecule can be used as the initial structure for metadynamics sum
 It will take about 10 hours on 12 CPUs (Xeon E5-2609 1.70GHz) to run the demo provided in the script.
 
 #### Skeleton Decoration (`./decorator`)
-There are two step for skeleton decoration, sites prediction and groups prediction. First, the decorating sites were predicted with Transformer model trained using [OpenNMT](https://opennmt.net/OpenNMT-py/) and [PyTorch](https://pytorch.org/) and then, the R-groups were predicted with the RNN-based model proposed by [Arús-Pous et al.](https://github.com/undeadpixel/reinvent-scaffold-decorator).
+There are two step for skeleton decoration, sites prediction and groups prediction. First, the decorating sites were predicted with Transformer model trained using [OpenNMT](https://opennmt.net/OpenNMT-py/) and [PyTorch](https://pytorch.org/) and then, the R-groups were predicted with the RNN-based model proposed by [Arús-Pous et al.](https://doi.org/10.1186/s13321-020-00441-8).
 
 ##### Sites prediction:
+One need to first download the [data](http://terokit.qmclab.com/download.html?file=site_data.zip) and unzip under ```terogen/Decorator/site_prediction```, in which the checkppints can be used to do the prediction directly and the dataset can be used to train and test the model by user.
 `skeleton_extraction.py`: This is used to extract the carbon skeleton from the terpenoids structure.
 `site_prediction.sh`: This script is used to train and test the sites prediction model.
 
 ##### Groups prediction:
-###### This model was analogous to the scaffold decorator proposed in "[SMILES-based deep generative scaffold decorator for de-novo drug design](https://doi.org/10.1186/s13321-020-00441-8)"
+###### This model was analogous to the scaffold decorator proposed in "[SMILES-based deep generative scaffold decorator for de-novo drug design](https://github.com/undeadpixel/reinvent-scaffold-decorator)"
+One need to first download the [data](http://terokit.qmclab.com/download.html?file=group_data.zip) and unzip under ```terogen/Decorator/group_decoration```, in which the checkppints can be used to do the prediction directly and the dataset can be used to train and test the model by user.
 `group_prediction.sh`: This script is used to train and test the sites prediction model.
