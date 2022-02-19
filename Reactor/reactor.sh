@@ -45,7 +45,7 @@ do
                     num_sub=$num
                     continue
                 fi
-                if [ $flag -eq $site ];then
+                if [ $flag -eq $site ] && [[ "$smi" == *"${smi_sub}"* ]];then
                     cp xtbopt.xyz sub.xyz
                     num_sub=$num
                     continue
